@@ -42,7 +42,7 @@ const Login = (props) => {
        else {
            localStorage.setItem("jwt",data.token)
            localStorage.setItem("user",username)
-           history.push('/')
+           history.push('/home')
        }
     }).catch(err=>{
         console.log(err)

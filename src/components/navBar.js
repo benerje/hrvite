@@ -51,7 +51,7 @@ function ButtonAppBar(props) {
              <Button 
               onClick={()=>{
                 localStorage.clear()
-                history.push('/login')
+                history.push('/')
                 }
             }
              variant="contained" style={button} color="secondary">Logout</Button>

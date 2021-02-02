@@ -35,7 +35,7 @@ const UpdateDepartment = (props) => {
            }
        else{
            alert("created success")
-           history.push('/')
+           history.push('/home')
        }
     }).catch(err=>{
         console.log(err)
@@ -48,7 +48,7 @@ const UpdateDepartment = (props) => {
         
         <Grid>
             <Paper elevation={10} style={paperStyle}>
-                <Link to='/'>
+                <Link to='/home'>
                  <Button  style={button} variant="contained" type="submit" color="primary">Back</Button>
                 </Link>
             

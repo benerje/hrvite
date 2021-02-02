@@ -7,26 +7,29 @@ import UpdateDepartment from './components/updateDepartment';
 import Home2 from './components/home/Home2';
 import {connect} from 'react-redux'
 import ButtonAppBar from './components/navBar';
+import jwt from "jsonwebtoken"
 
 
 const App=() =>{
   const history = useHistory()
-  useEffect(()=>{
-      const user = JSON.parse(localStorage.getItem('jwt'))
-      if(user===null){
-       history.push('/')
+  if(localStorage.jwt){
+    jwt.verify(localStorage.jwt,'secret',function(err,decode){
+      if(err){
+        console.log(err)
+        history.push('/')
       }
-  },[])
+    })
+  }
   return (
     <div >
           <BrowserRouter>
             <Switch>        
-               <Route exact path="/">
+               <Route exact path="/home">
                    <ButtonAppBar/>
                     <Home2 />  
                 </Route>
 
-                <Route path="/login">
+                <Route exact path="/">
                     <Login />
                 </Route>
                 <Route path="/createdepartment">
